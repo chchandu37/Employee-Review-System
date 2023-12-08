@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview List</title>
+</head>
+<body>
+  <h1>Interview List</h1>
+  <ul>
+    <% interviews.forEach(interview => { %>
+      <li><%= interview.companyName %>, Date: <%= interview.date %></li>
+    <% }) %>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+// controllers/resultController.js
+const Result = require('../models/Result');
+
+exports.getResults = async (req, res) => {
+  try {
+    const results = await Result.find().populate('student', 'name college status');
+    res.render('results', { results });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+exports.addResult = async (req, res) => {
+  try {
+    const { companyName, result, studentId } = req.body;
+    const newResult = new Result({ companyName, result, student: studentId });
+    await newResult.save();
+    res.status(201).json({ message: 'Result added successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};

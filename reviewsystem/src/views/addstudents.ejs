@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student</title>
+</head>
+<body>
+  <h1>Add Student</h1>
+  <form action="/students/add" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="college">College:</label>
+    <input type="text" id="college" name="college" required><br>
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+      <option value="placed">Placed</option>
+      <option value="not_placed" selected>Not Placed</option>
+    </select><br>
+    <label for="dsaFinalScore">DSA Final Score:</label>
+    <input type="number" id="dsaFinalScore" name="dsaFinalScore" value="0"><br>
+    <label for="webDFinalScore">WebD Final Score:</label>
+    <input type="number" id="webDFinalScore" name="webDFinalScore" value="0"><br>
+    <label for="reactFinalScore">React Final Score:</label>
+    <input type="number" id="reactFinalScore" name="reactFinalScore" value="0"><br>
+    <button type="submit">Add Student</button>
+  </form>
+</body>
+</html>
